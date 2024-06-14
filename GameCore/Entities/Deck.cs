@@ -1,8 +1,8 @@
 ﻿namespace GameCore.Entities
 {
-    public class Deck
+    public class Deck : List<Card>
     {
-        public List<Card> Cards { get; set; }
+        public List<Card> Cards { get; set; } = new List<Card>();
 
         public Card GetRandomCard()
         {
@@ -14,12 +14,12 @@
             return card;
         }
 
-        public void AddCard( Card card)
+        public void AddCard(Card card)
         {
             Cards.Add(card);
         }
 
-        private void RemoveCard(Card card)
+        public void RemoveCard(Card card)
         {
             Cards.Remove(card);
         }
